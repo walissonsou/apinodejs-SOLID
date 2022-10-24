@@ -7,6 +7,10 @@ export default function createCourse(req: Request, res: Response) {
     educator: "Walisson",
     duration: 10,
 })
+CreateCourseService.execute({
+  name:".NET",
+  educator: "Souza",
+  })
 
   return res.send();
 }

@@ -1,12 +1,8 @@
 "use strict";
-/*
-* name - string
-* duration - number
-* educator - string
-*/
 Object.defineProperty(exports, "__esModule", { value: true });
 class CreateCourseService {
-    execute(name, duration, educator) {
+    // se nao vier duração, ele toma 10 semanas como base 
+    execute({ name, duration = 10, educator }) {
         console.log(name, duration, educator);
     }
 }
