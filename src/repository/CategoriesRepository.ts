@@ -25,6 +25,11 @@ export function ListCategory():ICategory[] {
   return categories 
 }
 
+export function findByName(name: string){
+  let category = categories.find((category) => category.name === name)   
+
+  return category
+}
 
 // class CategoriesRepository {
 //   private categories: ICategory[] = [];    
