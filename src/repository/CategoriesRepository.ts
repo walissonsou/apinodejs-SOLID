@@ -25,29 +25,7 @@ export function ListCategory():ICategory[] {
   return categories 
 }
 
-export function findByName(name: string){
-  let category = categories.find((category) => category.name === name)   
-
-  return category
+export function findByName(name: string){ //  PRECISO RESOLVER A TIPAGEM DO FINDBYNAME 
+  const category = categories.find((category) => category.name === name)  
+  return category  
 }
-
-// class CategoriesRepository {
-//   private categories: ICategory[] = [];    
-
-//   constructor() {
-//     this.categories = [];
-//     }  
-
-//     create({description, name}: ICategory): void {
-//       const category: ICategory = { 
-//         id: uuidV4(),
-//         name,
-//         description,
-//         created_at: new Date(),
-//       };
-    
-//       this.categories.push(category)
-//     }
-// }
-
-// export { CategoriesRepository }
