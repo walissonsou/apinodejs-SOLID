@@ -18,7 +18,7 @@ categoriesRoutes.post("/", (req, res) => {
 
   categories.push(category)
 
-  return res.status(201).send()
+  return res.status(201).json({category})
 })
 
 export default categoriesRoutes;
