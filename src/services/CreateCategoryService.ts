@@ -12,18 +12,17 @@ interface ICreateRepository{
 
 */
 
-export default class CreateRepositoryService{
-  execute({name, description}: ICreateRepository) { 
+// o service nao tem que conhecer o tipo do repositorio, ele é o alto nivel, 
+// oé a camada perto do domínio.
+// rostas é o baixo nível ( mais perto do usuario)
+
+export default function CreateRepositoryService({name, description}: ICreateRepository){ 
    
   const categoryAlreadyExists = findByName(name)
-
   if(categoryAlreadyExists){
-    // return res.status(400).json({error:"Category already existis"
- // como eu nao tenho acesso ao response, tenho que fazer um throw ( excessão, é um erro que vai ser lançado pra quem fez a requisição) 
-    throw new Error("Category already existis")  
-  
+
+    throw new Error("Category already existis")    
   }
 
   CreateRepository({name, description});
-  }
 }
