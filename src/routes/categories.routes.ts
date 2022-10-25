@@ -4,15 +4,7 @@ import {CreateRepository, findByName, ListCategory } from '../repository/Categor
 const categoriesRoutes = Router();
 
 categoriesRoutes.post("/", (req, res) => {
-  const { name, description } = req.body;
-
-  const categoryAlreadyExists = findByName(name)
-
-  if(categoryAlreadyExists){
-    return res.status(400).json({error:"Category already existis"})
-  }
-
-  CreateRepository({name, description});
+  const { name, description } = req.body; 
 
   return res.status(201).send()
 })
