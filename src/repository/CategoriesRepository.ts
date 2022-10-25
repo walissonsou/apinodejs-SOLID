@@ -25,7 +25,8 @@ export function ListCategory():ICategory[] {
   return categories 
 }
 
-export function findByName(name: string){ //  PRECISO RESOLVER A TIPAGEM DO FINDBYNAME 
-  const category = categories.find((category) => category.name === name)  
-  return category  
+export function findByName(name: string){ 
+  const category = categories.find((category) => category.name === name)    
+  return category
+
 }
