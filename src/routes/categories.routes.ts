@@ -7,7 +7,7 @@ const categoriesRoutes = Router();
 categoriesRoutes.post("/", (req, res) => {
   const { name, description } = req.body; 
 
-  CreateRepositoryService(name, description)
+  CreateRepositoryService({name, description})
   
   return res.status(201).send()
 })
