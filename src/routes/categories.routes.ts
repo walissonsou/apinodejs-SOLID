@@ -1,8 +1,11 @@
 import { Router } from 'express';
 import {ListCategory } from '../repository/CategoriesRepository'
+import { ListSpecifications } from '../repository/Specification';
 import CreateRepositoryService from '../services/CreateCategoryService';
+import CreateSpecificationService from '../services/CreateSpecification';
 
-const categoriesRoutes = Router();
+export const categoriesRoutes = Router();
+export const specificationRoutes = Router();
 
 categoriesRoutes.post("/", (req, res) => {
   const { name, description } = req.body; 
@@ -18,5 +21,16 @@ categoriesRoutes.get("/", (req, res) => {
   return res.json(all)
 })
 
+specificationRoutes.post("/", ( req, res) => {
+  const { name, description } = req.body; 
 
-export default categoriesRoutes;
+  CreateSpecificationService({name, description})
+
+  return res.status(201).send()
+})
+
+specificationRoutes.get("/", (req, res) => {
+  const all = ListSpecifications(); 
+
+  return res.json(all)
+})
