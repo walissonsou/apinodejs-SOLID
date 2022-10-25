@@ -6,8 +6,10 @@ interface ICreateCategoryDTO {
   description: string;
 }
 
-export default function CategoriesRepository({description, name}: ICreateCategoryDTO){
-  const categories: ICategory[] = [];  
+let categories: ICategory[] = [];  
+
+export function CreateRepository({description, name}: ICreateCategoryDTO){
+  
     const category: ICategory ={
       id: uuidV4(),
       name,
@@ -18,8 +20,12 @@ export default function CategoriesRepository({description, name}: ICreateCategor
     categories.push(category)
 
     return categories.push(category)
-  }
+}
 
+export function ListCategory():ICategory[] {   
+  
+  return categories 
+}
 
 
 // class CategoriesRepository {
