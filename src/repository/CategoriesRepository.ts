@@ -17,12 +17,10 @@ export function CreateRepository({description, name}: ICreateCategoryDTO){
       created_at: new Date(),
     };
 
-    categories.push(category)
-
-    return categories.push(category)
+    categories.push(category)    
 }
 
-export function ListCategory():ICategory[] {   
+export function ListCategory():ICategory[] {  
   
   return categories 
 }
